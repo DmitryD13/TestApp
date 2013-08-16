@@ -1,0 +1,76 @@
+body 
+{
+    background-color: ghostwhite;
+}
+h1
+{
+    font-family: Calibri;
+    font-weight: 300; 
+    font-size: 20px; 
+    text-align: center;        
+    color: orange;
+}
+div 
+{
+    width: 100%;
+}
+button 
+{
+    width: 100%;
+    height: 20px;
+    border: 2px solid darkorange;
+    background-color: orange;
+    font-size: 12px;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 0px;  
+}
+    button.levelButton 
+    {
+        width: auto;
+        height: 15px;
+        font-size: 10px;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-right: 3px;
+        margin-bottom: 0px;
+    }
+table 
+{
+    width: 100%;
+}
+td 
+{
+    padding: 3px;
+    text-align: center;
+    font-size: 10px;
+}
+img 
+{
+    width: 100%;
+}
+#tImage 
+{
+    width: 25%;
+}
+#tTitle 
+{
+    width: 75%;
+    font-size: 10px;
+}
+#pImage 
+{
+    width: 25%;
+}
+#pTitle 
+{
+    width: 75%;
+    font-size: 10px;
+}
+#map-canvas 
+{    
+    margin-top: 5px;
+    height: 150px;
+    width: 100%;
+}

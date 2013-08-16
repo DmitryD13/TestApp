@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link id="styling" rel="stylesheet" type="text/css" href="lib/css/mainPage.css" />
+    <title>Industrierat</title>
+</head>
+<body>
+    <div id="Head1">
+        <h1>Industrierat</h1>
+    </div>    
+    <script type="text/javascript" charset="utf-8" src="lib/js/cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/js/jquery_1.5.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/js/jquery.jmsajax.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbk7yiomp1yQa49WJjBivthGMJOOrU1Ws&sensor=false&language=de"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/js/PushNotification.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/js/myPushNotificationsScript.js"></script>
+    
+    <!--<div id="home">
+        <div id="app-status-div">
+            <ul id="app-status-ul">
+                <li>Cordova PushNotification Plugin Demo</li>
+            </ul>
+        </div>
+    </div>-->
+
+    <script type="text/javascript" charset="utf-8" src="lib/js/knockout-2.3.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/js/transactions.js"></script>    
+    
+    <!--<script type="text/ecmascript" charset="utf-8">
+        if ($(window).height() < 480 || $(window).width() < 480)
+        {
+            alert("The screen is small: " + $(window).width() + "x" + $(window).height() + "! I will adjust my styling :-)");
+            document.getElementById("styling").setAttribute("href", "lib/css/mainPageS.css");
+        }
+        else if ($(window).height() > 1200 || $(window).width() > 1200)
+        {
+            alert("The screen is big: " + $(window).width() + "x" + $(window).height() + "! I will adjust my styling :-)");
+            document.getElementById("styling").setAttribute("href", "lib/css/mainPageL.css");
+        }
+        else
+        {
+            alert("The screen size is ok: " + $(window).width() + "x" + $(window).height() + ". Let us continue :-)");
+        }
+    </script>-->
+
+    <br />
+        
+    <div id="TransactionsDiv" class="cDiv">
+        <button id="1" class="menuButton" onclick="loadTransactions(1)">Versteigerung</button>
+        <button id="2" class="menuButton" onclick="loadTransactions(2)">Verkaeufe</button>
+        <button id="3" class="menuButton" onclick="loadTransactions(3)">Unternehmensverkaeufe</button>
+        <button id="4" class="menuButton" onclick="loadTransactions(4)">Immobilien</button>
+    </div>
+        
+    <div id="transactionListDiv" class="cDiv">
+        <div>
+            <button class="levelButton" onclick='goToLevel("transactionListDiv", 0)'>Home</button>
+        </div>
+        <table>
+            <tbody data-bind="foreach: Transaction">
+                <tr onclick="loadPositions(this)" data-bind="attr: { id: ID }">
+                    <td id="tImage" class="lImage"><img data-bind="attr: { src: ImageUrl }"/></td>
+                    <td id="tTitle" class="Title" data-bind="text: Title"></td>        
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="positionListDiv" class="cDiv">
+        <div>
+            <button class="levelButton" onclick='goToLevel("positionListDiv", 0)'>Home</button>
+            <button class="levelButton" onclick='goToLevel("positionListDiv", 1)'>Verwertungsvorgaenge</button>
+        </div>
+        <table>
+            <tbody data-bind="foreach: lPosition">
+                <tr onclick="loadPositionDetails(this)" data-bind="attr: { id: ID }">
+                    <td id="pImage" class="lImage"><img data-bind="attr: { src: ImageUrl }"/></td>
+                    <td id="pTitle" class="Title" data-bind="text: Title"></td>        
+                </tr>
+            </tbody>
+        </table>        
+    </div>
+
+    <div id="positionDiv" class="cDiv">
+        <div>
+            <button class="levelButton" onclick='goToLevel("positionDiv", 0)'>Home</button>
+            <button class="levelButton" onclick='goToLevel("positionDiv", 1)'>Verwertungsvorgaenge</button>
+            <button class="levelButton" onclick='goToLevel("positionDiv", 2)'>Positionen</button>
+        </div>
+        <table>
+            <tbody data-bind="foreach: Pos" >
+                <tr>
+                    <td class="Title" data-bind="text: Title"></td>
+                </tr>
+                <tr>
+                    <td><img data-bind="attr: { src: ImageUrl }" /></td>
+                </tr>
+                <tr>
+                    <td id="dDescription" data-bind="text: Description"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="map-canvas" />        
+    </div> 
+    
+    <script type="text/javascript" charset="utf-8" src="lib/js/dynamicStyling.js"></script>     
+    
+    <script type="text/javascript">
+        // Set display property of TransactionsDiv
+            document.getElementById("TransactionsDiv").style.display = "block";
+            
+        // Bind to transactionListDiv
+        ko.applyBindings({
+            Transaction: Transactions
+        }, document.getElementById("transactionListDiv"));
+
+        // Hide transactionListDiv
+        document.getElementById("transactionListDiv").style.display = "none";
+        document.getElementById("transactionListDiv").style.display = "none";
+
+        // Bind to positionListDiv
+        ko.applyBindings({
+            lPosition: Positions
+        }, document.getElementById("positionListDiv"));
+
+        // Hide positionListDiv
+        document.getElementById("positionListDiv").style.display = "none";
+        
+        // Bind to positionDiv
+        ko.applyBindings({ Pos: dPosition }, document.getElementById("positionDiv"));              
+
+        // Hide positionDiv
+        document.getElementById("positionDiv").style.display = "none";
+
+    </script>       
+</body>
+</html>
+
+

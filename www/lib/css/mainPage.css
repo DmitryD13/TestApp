@@ -1,0 +1,178 @@
+body 
+{
+    background-color: ghostwhite;  
+}
+h1
+{
+    font-family: Calibri;
+    font-weight: bold; 
+    text-align: center;        
+    color: orange;
+}
+div 
+{
+    margin-left: auto;
+    margin-right: auto;
+    /*max-width: 700px;*/
+    width: 100%;
+}
+button 
+{
+    /*width: 100%;
+    min-height: 20px;
+    max-height: 70px;
+    border: 5px solid darkorange;
+    background-color: orange;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 0px;  
+    text-align: center;*/
+}
+    button.menuButton 
+    {
+        width: 100%;
+        min-height: 20px;
+        max-height: 70px;
+        border: 5px solid darkorange;
+        background-color: orange;
+        margin-left: 0px;
+        margin-top: 20px;
+        margin-right: 0px;
+        margin-bottom: 0px;  
+        text-align: center;
+    }
+    button.levelButton 
+    {
+        width: 30%;
+        min-height: 20px;
+        max-height: 50px;
+        border: 5px solid darkorange;
+        background-color: orange;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+table 
+{
+    width: 100%;
+}
+td 
+{
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+    td.Title 
+    {
+        font-weight: bold;
+        width: 75%;
+    }
+    td.lImage 
+    {
+        width: 25%;
+    }
+img 
+{
+    width: 100%;
+}
+#dDescription 
+{
+    font-weight: normal;
+}
+/*#tImage 
+{
+    width: 25%;
+}
+#tTitle 
+{
+    width: 75%;
+}
+#pImage 
+{
+    width: 25%;
+}
+#pTitle 
+{
+    width: 75%;
+}*/
+#map-canvas 
+{    
+    margin-top: 10px;
+    width: 100%;
+}
+
+/*body 
+{
+    background-color: ghostwhite;
+}
+h1
+{
+    font-family: Calibri;
+    font-weight: 300;  
+    text-align: center;        
+    color: orange;
+}
+div 
+{
+    width: 100%;
+}
+button 
+{
+    width: 100%;
+    height: 70px;
+    border: 5px solid darkorange;
+    background-color: orange;
+    font-size: 20px;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 0px;  
+}
+    button.levelButton 
+    {
+        width: auto;
+        height: 50px;
+        font-size: 18px;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-right: 10px;
+        margin-bottom: 0px;
+    }
+table 
+{
+    width: 100%;
+}
+td 
+{
+    padding: 10px;
+    text-align: center;
+}
+img 
+{
+    width: 100%;
+}
+#tImage 
+{
+    width: 25%;
+}
+#tTitle 
+{
+    width: 75%;
+}
+#pImage 
+{
+    width: 25%;
+}
+#pTitle 
+{
+    width: 75%;
+}
+#map-canvas 
+{    
+    margin-top: 10px;
+    height: 400px;
+    width: 100%;
+}*/
